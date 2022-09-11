@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(11, 188, 191);
+
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1050px;
+    
+
+}
+section{
+    background: white;
+    border-radius: 7px;
+    padding: 15px 22px 0;
+
+}
+
+.tools-board{
+    width: 210px;
+}
+
+.tools-board .row{
+    margin-bottom: 20px;
+}
+
+.row .options{
+    list-style: none;
+    margin: 10px 0 0 5px;
+}
+
+.row .options .option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option:is(:hover, :active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+
+}
+.options :where(span, label){
+    color: black;
+    padding-left: 10px;
+}
+
+.option:is(:hover, .active) :where(span, label){
+    color: blue;
+
+}
+
+
+.option #fill-color{
+    height: 14px;
+    width: 14px;
+
+}
+#fill-color:checked ~ label{
+    color: blue;
+}
+.option #size-slider{
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+}
+.colors .options{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.colors .option{
+    height: 20px;
+    width: 20px;
+    background: red;
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+}
+.colors .option:nth-child(1){
+    background-color: white;
+    border: 1px solid gray;
+}
+.colors .option:nth-child(2){
+    background-color: black;
+}
+.colors .option:nth-child(3){
+    background-color: red;
+}
+.colors .option:nth-child(4){
+    background-color: green;
+}
+.colors .option:nth-child(5){
+    background-color: skyblue;
+}
+
+
+.colors .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid white;
+    transform:translate(-50%, -50%);
+
+}
+
+.colors .option:first-child.selected::before{
+    border-color: #ccc;
+    
+}
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.buttons button{
+    width: 100%;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 11px 0;
+    font-size: 0.9rem;
+    margin-bottom: 13px;
+    background: none;
+    border-radius: 5px ;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttons .clear-canvas{
+    color: rgb(226, 94, 7);
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+}
+
+.clear-canvas:hover{
+    color: white;
+    background-color: rgb(217, 18, 111);
+}
+.buttons .save-img{
+    color: white;
+    border: 1px solid rgb(8, 22, 221);
+    background-color: rgb(24, 184, 83);
+}
+
+.save-img:hover{
+
+    color: white;
+    background-color: green;
+}
+
+.drawing-board{
+    flex: 1;
+}
+
+.drawing-board canvas{
+    width: 100%;
+    height: 100%;
+}

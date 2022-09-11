@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <section class="tools-board">
+            <div class="row">
+                <lavel class="title">Shapes</lavel>
+                <ul class="options">
+                    <li class="option tool" id="rectangle">
+                        <img src="icons/rectangle.svg" alt="">
+                        <span>Rectangle</span>
+                    </li>
+
+                    <li class="option tool" id="circle">
+                        <img src="icons/circle.svg" alt="">
+                        <span>Circle</span>
+                    </li>
+
+                    <li class="option tool" id="triangle">
+                        <img src="icons/triangle.svg" alt="">
+                        <span>Triangle</span>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="fill-color">
+                        <label for="fill-color">Fill Color</label>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="row">
+                <lavel class="title">Options</lavel>
+                <ul class="options">
+                    <li class="option active tool" id="brush">
+                        <img src="icons/brush.svg" alt="">
+                        <span>Brush</span>
+                    </li>
+
+                    <li class="option active tool" id="eraser">
+                        <img src="icons/eraser.svg" alt="">
+                        <span>Eraser</span>
+                    </li>
+
+                    </li>
+                    <li class="option">
+                        <input type="range" id="size-slider" min="1" max="30" value="5">
+                    </li>
+                    
+                </ul>
+            </div>
+
+
+            <div class="row colors">
+                <lavel class="title">Colors</lavel>
+                <ul class="options">
+                    <li class="option"></li>
+                    <li class="option selected"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option">
+                        <input type="color" id="color-picker" value="skyblue">
+                    </li>  
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <button class="clear-canvas">Clear Image</button>
+                <button class="save-img">Save Image</button>
+            </div>
+
+
+        </section>
+
+
+        <section class="drawing-board">
+            <canvas></canvas>
+        </section>
+    </div>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
